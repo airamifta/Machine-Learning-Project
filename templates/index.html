@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div id="imgChoose" class="mt-5 bg-slate-700 border-dashed border-2 border-slate-500 rounded-lg flex flex-col items-center justify-center p-10">
+        <img id="previewImage" src="https://img.icons8.com/parakeet/48/stack-of-photos.png" alt="stack-of-photos" class="mx-auto mb-4" width="200" height="200"/>
+        <div id="chooseMethodUpload" class="flex flex-row gap-2">
+            <button class="font-semibold text-slate-300" type="button" onclick="document.getElementById('file').click()">Choose from Gallery</button>
+            <p class="text-slate-400">or</p>
+            <button class="font-semibold text-slate-300" type="button" onclick="capturePhoto()">Capture Photo</button>
+        </div>
+    </div>
+
+    <div class="mt-5 mb-4 text-white">
+        <p>Import from URL</p>
+        <div class="mt-2 bg-slate-600 w-full px-4 rounded-lg focus:border-slate-500 border-2 border-slate-600 flex justify-between">
+            <input 
+            id="fileUrlInput"
+            class="py-2 bg-slate-600 outline-none w-full text-slate-300" 
+            placeholder="Add file URL"
+            type="text"
+            >
+            <button class="py-2 text-slate-300-" onclick="pasteFromClipboard(); return false;">Paste</button>
+        </div>
+    </div>
+{% endblock content %}
+
+{% block button %}
+    <div class="flex gap-3">
+        <button class="border-2 border-slate-300 text-white py-1 px-5 rounded" onclick="resetImage(); return false">Reset</button>
+        <button class="bg-slate-500 text-white py-1 px-5 rounded" type="submit">Check</button>
+    </div>
+{% endblock button %}

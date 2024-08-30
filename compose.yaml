@@ -1,0 +1,10 @@
+services:
+  web:
+      container_name: web-predict-orange
+      build: .
+      command: python app.py
+      volumes:
+        - .:/app/WebPredict
+      ports:
+        - 8000:8000
+    
